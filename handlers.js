@@ -3,7 +3,7 @@ const redisClient = redis.createClient(`redis://localhost:6379`);
 
 const { getDefaultStatus, getNextStatus } = require('./status');
 
-const defaultTodo = () => ({ tasks: [], title: 'your todo', lastId: 0 });
+const defaultTodo = () => ({ tasks: [], title: 'todo', lastId: 0 });
 
 const setTodo = (req, res) => {
   const todoData = JSON.stringify(req.app.locals.todoData);
