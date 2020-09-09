@@ -10,6 +10,7 @@ const {
   addTask,
 } = require('./handlers');
 
+app.use(express.static('./react-build'));
 app.use(express.json());
 
 app.use((req, res, next) => {
