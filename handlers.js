@@ -1,5 +1,5 @@
 const redis = require('redis');
-const redisClient = redis.createClient({ db: 1 });
+const redisClient = redis.createClient(`redis://localhost:6379`);
 
 const { getDefaultStatus, getNextStatus } = require('./status');
 
@@ -19,7 +19,6 @@ const getTodoData = (req, res) => {
     if (err) {
       req.app.locals.todoData = defaultTodo();
     }
-    console.log(err, data, req.app.locals);
     req.app.locals.todoData = JSON.parse(data) || defaultTodo();
     const { tasks, title } = req.app.locals.todoData;
     res.json({ tasks, title });
