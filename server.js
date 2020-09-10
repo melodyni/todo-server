@@ -25,4 +25,6 @@ app.post('/api/removeTodo', removeTodo);
 app.post('/api/updateTitle', updateTitle);
 app.post('/api/addTask', addTask);
 
-app.listen(3001, () => console.log(`Listening on port 3001`));
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => console.log(`Listening on port 3001`));

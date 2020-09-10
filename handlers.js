@@ -1,5 +1,5 @@
-const redis = require('redis');
-const redisClient = redis.createClient(`redis://localhost:6379`);
+const { createClient } = require('./redisClient');
+const redisClient = createClient();
 
 const { getDefaultStatus, getNextStatus } = require('./status');
 
